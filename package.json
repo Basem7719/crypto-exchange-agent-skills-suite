@@ -1,6 +1,6 @@
 {
   "name": "crypto-exchange-agent-skills-suite",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A production-grade suite of 21 Skills for crypto trading and analysis on Binance and OKX, compatible with Claude Code, OpenClaw, Cursor, and Hermes.",
   "license": "MIT",
   "keywords": [
@@ -22,8 +22,15 @@
   ],
   "scripts": {
     "validate": "node scripts/validate-skills.js",
-    "index": "node scripts/generate-skill-index.js",
+    "generate:index": "node scripts/generate-skill-index.js",
     "new-skill": "node scripts/create-new-skill.js",
+    "build": "tsc",
+    "check:binance": "node --loader ts-node/esm src/cli/index.ts check:binance",
+    "check:okx": "node --loader ts-node/esm src/cli/index.ts check:okx",
+    "market:test": "node --loader ts-node/esm src/cli/index.ts market:test",
+    "account:read": "node --loader ts-node/esm src/cli/index.ts account:read",
+    "order:dry-run": "node --loader ts-node/esm src/cli/index.ts order:dry-run",
+    "trade:paper": "node --loader ts-node/esm src/cli/index.ts trade:paper",
     "install:claude": "bash scripts/install-claude.sh",
     "install:openclaw": "bash scripts/install-openclaw.sh",
     "install:all": "bash scripts/install-all.sh"

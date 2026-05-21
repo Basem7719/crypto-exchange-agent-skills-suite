@@ -1,0 +1,33 @@
+{
+  "exchange": "binance",
+  "timestamp": "2026-05-21T08:00:00.000Z",
+  "total_equity_usdt": 12450.75,
+  "balances": [
+    {
+      "asset": "USDT",
+      "free": 5230.25,
+      "locked": 963.75,
+      "total": 6194.0
+    },
+    {
+      "asset": "BTC",
+      "free": 0.085,
+      "locked": 0.015,
+      "total": 0.1
+    },
+    {
+      "asset": "ETH",
+      "free": 1.5,
+      "locked": 0.0,
+      "total": 1.5
+    },
+    {
+      "asset": "SOL",
+      "free": 12.0,
+      "locked": 0.0,
+      "total": 12.0
+    }
+  ],
+  "open_positions": [],
+  "notes": "Snapshot taken before market open. USDT locked in open limit order on BTCUSDT."
+}

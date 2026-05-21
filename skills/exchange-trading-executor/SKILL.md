@@ -186,12 +186,40 @@ No order was submitted.
 
 ---
 
+## Runtime Implementation (v1.1)
+
+This skill is backed by two TypeScript services in the `src/` layer:
+
+### `src/services/order-service.ts`
+Handles actual order submission to Binance and OKX. Responsible for:
+- Building signed HTTP requests for each exchange
+- Mapping raw API responses to a normalised `OrderResult`
+- Recording every submission to `~/.crypto-skills/executor-ledger.jsonl`
+- Refusing submission if the kill-switch file exists
+
+### `src/services/risk-gate-service.ts`
+Enforces all pre-flight safety gates before any order is constructed. Checks:
+- Notional vs `MAX_TRADE_USDT` cap
+- % of equity at risk vs `maxRiskPctPerTrade`
+- Leverage cap (default 20×)
+- R:R ratio minimum (1.5)
+- Order spec freshness (must be < 5 minutes old)
+- DRY_RUN flag enforcement
+
+Both services are instantiated by `src/cli/index.ts` and respect the environment variables defined in `.env.example`.
+
+---
+
 ## Handoff
 
 ```
 crypto-entry-exit-plan → exchange-order-planner → exchange-account-review → exchange-trading-executor
-                                                       ↑ (verifies scope)
-                            crypto-risk-manager ──────┘ (pre-trade gate)
+                                                       ↑ (verifies scope)         ↓
+                            crypto-risk-manager ──────┘ (pre-trade gate)   src/services/risk-gate-service.ts
+                                                                                   ↓
+                                                                            src/services/order-service.ts
+                                                                                   ↓
+                                                                     ~/.crypto-skills/executor-ledger.jsonl
 ```
 
 - **Inputs:** `order_spec` from `exchange-order-planner`; scope confirmation from `exchange-account-review`; risk verdict from `crypto-risk-manager`.

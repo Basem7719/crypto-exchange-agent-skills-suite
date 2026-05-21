@@ -1,0 +1,29 @@
+{
+  "default": {
+    "name": "Main Watchlist",
+    "created_at": "2026-05-20T00:00:00.000Z",
+    "updated_at": "2026-05-21T00:00:00.000Z",
+    "symbols": {
+      "binance": ["BTCUSDT", "ETHUSDT", "SOLUSDT", "BNBUSDT", "XRPUSDT"],
+      "okx": ["BTC-USDT", "ETH-USDT", "SOL-USDT", "OKB-USDT"]
+    }
+  },
+  "futures_watch": {
+    "name": "Futures Focus",
+    "created_at": "2026-05-20T00:00:00.000Z",
+    "updated_at": "2026-05-21T00:00:00.000Z",
+    "symbols": {
+      "binance": ["BTCUSDT", "ETHUSDT", "SOLUSDT"],
+      "okx": ["BTC-USDT-SWAP", "ETH-USDT-SWAP", "SOL-USDT-SWAP"]
+    }
+  },
+  "altcoins": {
+    "name": "Alt Season Radar",
+    "created_at": "2026-05-21T00:00:00.000Z",
+    "updated_at": "2026-05-21T00:00:00.000Z",
+    "symbols": {
+      "binance": ["AVAXUSDT", "DOTUSDT", "LINKUSDT", "MATICUSDT", "ARBUSDT"],
+      "okx": ["AVAX-USDT", "DOT-USDT", "LINK-USDT"]
+    }
+  }
+}

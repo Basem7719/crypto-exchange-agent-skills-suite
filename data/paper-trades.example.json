@@ -1,0 +1,40 @@
+[
+  {
+    "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+    "timestamp": "2026-05-20T08:00:00.000Z",
+    "exchange": "binance",
+    "symbol": "BTCUSDT",
+    "side": "BUY",
+    "type": "LIMIT",
+    "quantity": 0.015,
+    "price": 64250.0,
+    "notional": 963.75,
+    "pnl": 142.5,
+    "status": "closed"
+  },
+  {
+    "id": "b2c3d4e5-f6a7-8901-bcde-f12345678901",
+    "timestamp": "2026-05-20T10:30:00.000Z",
+    "exchange": "okx",
+    "symbol": "ETH-USDT",
+    "side": "BUY",
+    "type": "MARKET",
+    "quantity": 0.5,
+    "price": 3120.0,
+    "notional": 1560.0,
+    "status": "open"
+  },
+  {
+    "id": "c3d4e5f6-a7b8-9012-cdef-012345678902",
+    "timestamp": "2026-05-21T06:15:00.000Z",
+    "exchange": "binance",
+    "symbol": "SOLUSDT",
+    "side": "SELL",
+    "type": "LIMIT",
+    "quantity": 10,
+    "price": 172.5,
+    "notional": 1725.0,
+    "pnl": -45.0,
+    "status": "closed"
+  }
+]
