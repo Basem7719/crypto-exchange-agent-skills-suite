@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AccountReview",
+  "type": "object",
+  "required": ["exchange","market_type","scope","total_equity_usd","balances","open_orders","open_positions"],
+  "properties": {
+    "exchange":     {"type":"string", "enum":["binance","okx"]},
+    "market_type":  {"type":"string", "enum":["spot","usdm","coinm","swap","futures"]},
+    "scope": {
+      "type":"object",
+      "required": ["read","trade","withdraw"],
+      "properties": {
+        "read":     {"type":"boolean"},
+        "trade":    {"type":"boolean"},
+        "withdraw": {"type":"boolean", "const":false}
+      }
+    },
+    "total_equity_usd": {"type":"number"},
+    "balances": {
+      "type":"array",
+      "items": {"type":"object", "required":["asset","amount"], "properties":{"asset":{"type":"string"},"amount":{"type":"number"},"usd_value":{"type":"number"}}}
+    },
+    "open_orders": {"type":"array", "items":{"type":"object"}},
+    "open_positions": {"type":"array", "items":{"type":"object"}},
+    "recent_fills_7d": {"type":"array", "items":{"type":"object"}},
+    "pnl_7d_usd": {"type":"number"}
+  }
+}

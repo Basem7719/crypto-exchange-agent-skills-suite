@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "MarketScan",
+  "type": "object",
+  "required": ["pair","exchange","market_type","timestamp","price","price_change_pct_24h","volume_24h_quote","spread_bps","range_24h"],
+  "properties": {
+    "pair":               {"type":"string", "examples":["BTC/USDT"]},
+    "exchange":           {"type":"string", "enum":["binance","okx"]},
+    "market_type":        {"type":"string", "enum":["spot","usdm","coinm","swap","futures"]},
+    "timestamp":          {"type":"string", "format":"date-time"},
+    "price":              {"type":"number"},
+    "price_change_pct_24h":{"type":"number"},
+    "volume_24h_base":    {"type":"number"},
+    "volume_24h_quote":   {"type":"number"},
+    "spread_bps":         {"type":"number"},
+    "range_24h":          {"type":"object", "properties":{"low":{"type":"number"},"high":{"type":"number"}}},
+    "depth_usd_at_pct":   {"type":"object", "patternProperties":{"^[+-]?[0-9.]+pct$":{"type":"number"}}},
+    "raw_endpoints":      {"type":"array", "items":{"type":"string"}}
+  }
+}

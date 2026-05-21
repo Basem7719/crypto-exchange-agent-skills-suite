@@ -1,0 +1,260 @@
+{
+  "project": "crypto-exchange-agent-skills-suite",
+  "version": "1.0.0",
+  "skill_count": 21,
+  "generated_by": "scripts/generate-skill-index.js",
+  "skills": [
+    {
+      "name": "binance-market-scan",
+      "version": "1.0.0",
+      "category": "data",
+      "mode": "analysis",
+      "exchanges": [
+        "binance",
+        "okx"
+      ],
+      "path": "skills/binance-market-scan/",
+      "description": "Scan Binance markets (spot, USDS-M futures, COIN-M futures) for price, 24h stats, OHLCV candles, order book depth, recent trades, funding rates, open interest, and top movers. Use this skill whenever the user asks about Binance specifically — \"what's BTC doing on Binance\", \"Binance price of ETH/USDT"
+    },
+    {
+      "name": "crypto-compare-pairs",
+      "version": "1.0.0",
+      "category": "analysis",
+      "mode": "analysis",
+      "exchanges": [
+        "binance",
+        "okx"
+      ],
+      "path": "skills/crypto-compare-pairs/",
+      "description": "Side-by-side comparison of two or more crypto pairs on Binance or OKX across price action, technical structure, momentum, volume, liquidity, funding (perp only), and a composite ranking. Use this skill whenever the user asks \"compare X and Y\", \"BTC/USDT vs ETH/USDT\", \"which is stronger\", \"rank these"
+    },
+    {
+      "name": "crypto-entry-exit-planner",
+      "version": "1.0.0",
+      "category": "planning",
+      "mode": "both",
+      "exchanges": [
+        "binance",
+        "okx"
+      ],
+      "path": "skills/crypto-entry-exit-planner/",
+      "description": "Build a concrete, executable entry/exit plan for a single crypto pair on Binance or OKX — entry zone (limit/market), stop loss, take profit ladder, invalidation level, time-based exit, sizing reference, and pre-trade checklist. Use this skill whenever the user asks to \"build a plan\", \"where do I ent"
+    },
+    {
+      "name": "crypto-exchange-master",
+      "version": "1.0.0",
+      "category": "router",
+      "mode": "both",
+      "exchanges": [
+        "binance",
+        "okx"
+      ],
+      "path": "skills/crypto-exchange-master/",
+      "description": "Master orchestrator for centralized crypto exchange (CEX) trading on Binance and OKX. Use this skill whenever the user mentions Binance, OKX, Bybit, HTX, \"the exchange\", spot trading, futures trading, perpetuals, leverage, a trading pair like BTC/USDT or ETH/USDT, market scanning, account review, wa"
+    },
+    {
+      "name": "crypto-futures-analysis",
+      "version": "1.0.0",
+      "category": "analysis",
+      "mode": "analysis",
+      "exchanges": [
+        "binance",
+        "okx"
+      ],
+      "path": "skills/crypto-futures-analysis/",
+      "description": "Analyze perpetual/futures contracts on Binance USDS-M and OKX SWAP — funding rate (current + history), open interest and OI changes, basis vs spot, long/short ratios, taker buy/sell volume, mark vs index price, liquidation context, and leverage suggestions. Use this skill whenever the user mentions "
+    },
+    {
+      "name": "crypto-news-impact",
+      "version": "1.0.0",
+      "category": "analysis",
+      "mode": "analysis",
+      "exchanges": [
+        "binance",
+        "okx"
+      ],
+      "path": "skills/crypto-news-impact/",
+      "description": "Estimate the price-impact of a specific news event on a coin or pair traded on Binance / OKX. Takes a news headline or URL plus the pair, classifies the event (listing, delisting, hack, partnership, regulation, ETF, mainnet upgrade, token unlock, macro), benchmarks against historical analogs, and re"
+    },
+    {
+      "name": "crypto-report-generator",
+      "version": "1.0.0",
+      "category": "report",
+      "mode": "analysis",
+      "exchanges": [
+        "binance",
+        "okx"
+      ],
+      "path": "skills/crypto-report-generator/",
+      "description": "Build a full, submission-ready research report for any pair on Binance or OKX. Orchestrates the entire skill pipeline — market scan, technical analysis, spot view, futures view, liquidity check, risk sizing, entry/exit plan — and emits a single coherent markdown document with a final verdict. Trigge"
+    },
+    {
+      "name": "crypto-risk-manager",
+      "version": "1.0.0",
+      "category": "risk",
+      "mode": "both",
+      "exchanges": [
+        "binance",
+        "okx"
+      ],
+      "path": "skills/crypto-risk-manager/",
+      "description": "Compute position size, stop loss, take profit ladders, max-loss per trade, daily max-loss caps, leverage math, and a go/no-go risk gate before any spot or futures trade on Binance or OKX. Use this skill whenever the user mentions \"how much to buy\", \"position size\", \"stop loss\", \"risk per trade\", \"ho"
+    },
+    {
+      "name": "crypto-sentiment-scan",
+      "version": "1.0.0",
+      "category": "analysis",
+      "mode": "analysis",
+      "exchanges": [
+        "binance",
+        "okx"
+      ],
+      "path": "skills/crypto-sentiment-scan/",
+      "description": "Read the market mood for a coin or pair on Binance / OKX using a combination of futures funding rate, long/short ratio, open interest velocity, social-keyword volume, and exchange-listed sentiment proxies. Triggers on \"what's the sentiment on BTC\", \"how bullish is SOL right now\", \"are people long or"
+    },
+    {
+      "name": "crypto-skill-builder",
+      "version": "1.0.0",
+      "category": "meta",
+      "mode": "analysis",
+      "exchanges": [
+        "binance",
+        "okx"
+      ],
+      "path": "skills/crypto-skill-builder/",
+      "description": "Scaffolding tool that creates new Skills inside this project (crypto-exchange-agent-skills-suite) following the same structure, frontmatter, and quality bar as the 21 existing skills. Triggers on \"add a skill for X\", \"create a new skill that does Y\", \"اضف مهارة جديدة لـ Z\", \"ابني skill جديدة\". Gener"
+    },
+    {
+      "name": "crypto-spot-analysis",
+      "version": "1.0.0",
+      "category": "analysis",
+      "mode": "analysis",
+      "exchanges": [
+        "binance",
+        "okx"
+      ],
+      "path": "skills/crypto-spot-analysis/",
+      "description": "Analyze a spot trading pair on Binance or OKX — current price, 24h move, trend, volume profile, order book depth, key support/resistance, and a spot-specific setup quality score. Use this skill whenever the user asks to \"analyze X spot\", \"look at the spot market for X\", \"is X a good spot buy\", \"spot"
+    },
+    {
+      "name": "crypto-technical-analysis",
+      "version": "1.0.0",
+      "category": "analysis",
+      "mode": "analysis",
+      "exchanges": [
+        "binance",
+        "okx"
+      ],
+      "path": "skills/crypto-technical-analysis/",
+      "description": "Pure technical analysis of a crypto pair on Binance or OKX — multi-timeframe trend, RSI(14), MACD, Bollinger Bands, EMA 20/50/100/200, ATR, support/resistance zones, volume profile, momentum divergences, chart patterns, entry/exit/invalidation zones, and a Technical Score (0–100). Use this skill whe"
+    },
+    {
+      "name": "crypto-watchlist-manager",
+      "version": "1.0.0",
+      "category": "monitoring",
+      "mode": "analysis",
+      "exchanges": [
+        "binance",
+        "okx"
+      ],
+      "path": "skills/crypto-watchlist-manager/",
+      "description": "Build, score, and maintain a watchlist of crypto pairs on Binance and OKX with per-pair scores (technical, liquidity, momentum, risk) and condition-based alerts (price above/below, RSI cross, funding flip, volume spike, breakout of level). Use this skill whenever the user mentions \"watchlist\", \"trac"
+    },
+    {
+      "name": "exchange-account-review",
+      "version": "1.0.0",
+      "category": "account",
+      "mode": "analysis",
+      "exchanges": [
+        "binance",
+        "okx"
+      ],
+      "path": "skills/exchange-account-review/",
+      "description": "Review the user's Binance or OKX account state — total balance, per-asset breakdown, open spot positions, open futures positions with unrealized PnL, open orders, recent fills, fee tier, and a basic portfolio risk summary. Use this skill when the user asks \"show my balance\", \"what positions do I hav"
+    },
+    {
+      "name": "exchange-liquidity-depth",
+      "version": "1.0.0",
+      "category": "data",
+      "mode": "analysis",
+      "exchanges": [
+        "binance",
+        "okx"
+      ],
+      "path": "skills/exchange-liquidity-depth/",
+      "description": "Check liquidity, order book depth, spread, slippage estimate, and entry/exit feasibility for any pair on Binance or OKX (spot, perpetual, or futures). Use this skill whenever the user asks \"can I trade size X without moving the market\", \"what's the spread on BILL/USDT\", \"is there enough liquidity to"
+    },
+    {
+      "name": "exchange-order-planner",
+      "version": "1.0.0",
+      "category": "planning",
+      "mode": "both",
+      "exchanges": [
+        "binance",
+        "okx"
+      ],
+      "path": "skills/exchange-order-planner/",
+      "description": "Convert an entry/exit plan or a user request into a structured set of draft orders for Binance or OKX — market, limit, stop-limit, stop-market, take profit, OCO (Binance spot) or attached TP/SL (OKX), trailing stop, post-only, reduce-only, and time-in-force flags. Use this skill whenever the user sa"
+    },
+    {
+      "name": "exchange-pair-finder",
+      "version": "1.0.0",
+      "category": "data",
+      "mode": "analysis",
+      "exchanges": [
+        "binance",
+        "okx"
+      ],
+      "path": "skills/exchange-pair-finder/",
+      "description": "Check whether a coin or trading pair is listed on Binance, OKX, Bybit, or HTX, on which markets (spot, perpetual, futures), and with what trading status (live, suspended, delisted). Use this skill whenever the user asks \"is X listed on\", \"where can I trade X\", \"does Binance have BILL\", \"find PLAY on"
+    },
+    {
+      "name": "exchange-paper-trading",
+      "version": "1.0.0",
+      "category": "simulation",
+      "mode": "simulation",
+      "exchanges": [
+        "binance",
+        "okx"
+      ],
+      "path": "skills/exchange-paper-trading/",
+      "description": "Simulate trades on Binance or OKX without sending real orders — paper-trade entries, stops, take profits, partial fills, slippage, fees, and funding (for perp). Tracks a virtual ledger across sessions. Use this skill whenever the user says \"paper trade\", \"demo trade\", \"simulate this\", \"dry run\", \"wh"
+    },
+    {
+      "name": "exchange-trading-executor",
+      "version": "1.0.0",
+      "category": "execution",
+      "mode": "execution",
+      "exchanges": [
+        "binance",
+        "okx"
+      ],
+      "path": "skills/exchange-trading-executor/",
+      "description": "OPTIONAL live order submission to Binance or OKX. Reads draft order specs from exchange-order-planner and submits them to the exchange — ONLY after the user types an explicit CONFIRM keyword, API credentials have been verified as trade-scope (NOT withdraw-scope) via exchange-account-review, and the "
+    },
+    {
+      "name": "okx-market-scan",
+      "version": "1.0.0",
+      "category": "data",
+      "mode": "analysis",
+      "exchanges": [
+        "binance",
+        "okx"
+      ],
+      "path": "skills/okx-market-scan/",
+      "description": "Scan OKX markets (spot, perpetual swap, futures, options) for price, tickers, candles/OHLCV, order book depth, funding rates, open interest, mark price, index price, top movers, and technical indicators (RSI/MACD/EMA/Bollinger/KDJ/SuperTrend and 70+ more). Use this skill whenever the user asks about"
+    },
+    {
+      "name": "strategy-backtest-planner",
+      "version": "1.0.0",
+      "category": "strategy",
+      "mode": "analysis",
+      "exchanges": [
+        "binance",
+        "okx"
+      ],
+      "path": "skills/strategy-backtest-planner/",
+      "description": "Design a rigorous backtest plan for a crypto trading strategy on Binance or OKX before any code is written. Takes a strategy description (\"EMA cross with RSI filter\", \"funding-rate fade\", \"OI breakout\"), produces a complete backtest specification: data sources, sample period, walk-forward windows, e"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+npm-debug.log*
+yarn-error.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node
+node_modules/
+dist/
+build/
+
+# Skill state files
+.crypto-skills/
+*-ledger.jsonl
+watchlist.yaml
+paper-ledger.jsonl
+executor-ledger.jsonl
+blacklist.txt
+
+# Secrets (never commit!)
+*.key
+*.pem
+*.p12
+*.pfx
+api-keys.json
+secrets.json

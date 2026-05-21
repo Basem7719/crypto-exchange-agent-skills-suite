@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TradeReport",
+  "type": "object",
+  "required": ["pair","exchange","market_type","timeframe","generated_at","composite_score","verdict","sections"],
+  "properties": {
+    "pair":            {"type":"string"},
+    "exchange":        {"type":"string", "enum":["binance","okx"]},
+    "market_type":     {"type":"string", "enum":["spot","usdm","coinm","swap","futures"]},
+    "timeframe":       {"type":"string"},
+    "generated_at":    {"type":"string", "format":"date-time"},
+    "composite_score": {"type":"number", "minimum":0, "maximum":100},
+    "verdict":         {"type":"string", "enum":["BUY","WAIT","AVOID","SHORT","NO-TRADE"]},
+    "sections": {
+      "type":"object",
+      "properties": {
+        "snapshot":            {"type":"object"},
+        "technical_analysis":  {"$ref":"./technical-analysis.schema.json"},
+        "spot_view":           {"type":"object"},
+        "futures_view":        {"type":"object"},
+        "liquidity":           {"type":"object"},
+        "sentiment":           {"type":"object"},
+        "risk_plan":           {"$ref":"./risk-plan.schema.json"},
+        "entry_exit_plan":     {"type":"object"},
+        "caveats":             {"type":"array", "items":{"type":"string"}}
+      }
+    }
+  }
+}

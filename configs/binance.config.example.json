@@ -1,0 +1,37 @@
+{
+  "rest_endpoints": {
+    "spot": {
+      "ping": "/api/v3/ping",
+      "exchange_info": "/api/v3/exchangeInfo",
+      "ticker_24h": "/api/v3/ticker/24hr",
+      "klines": "/api/v3/klines",
+      "depth": "/api/v3/depth",
+      "account": "/api/v3/account",
+      "api_restrictions": "/sapi/v1/account/apiRestrictions",
+      "new_order": "/api/v3/order",
+      "new_oco": "/api/v3/orderList/oco",
+      "cancel_order": "/api/v3/order",
+      "open_orders": "/api/v3/openOrders"
+    },
+    "usdm": {
+      "ping": "/fapi/v1/ping",
+      "exchange_info": "/fapi/v1/exchangeInfo",
+      "klines": "/fapi/v1/klines",
+      "premium_index": "/fapi/v1/premiumIndex",
+      "funding_rate": "/fapi/v1/fundingRate",
+      "open_interest_hist": "/futures/data/openInterestHist",
+      "ls_account_ratio": "/futures/data/globalLongShortAccountRatio",
+      "top_ls_account_ratio": "/futures/data/topLongShortAccountRatio",
+      "top_ls_position_ratio": "/futures/data/topLongShortPositionRatio",
+      "taker_ls_ratio": "/futures/data/takerlongshortRatio",
+      "position_risk": "/fapi/v2/positionRisk",
+      "new_order": "/fapi/v1/order",
+      "cancel_order": "/fapi/v1/order",
+      "open_orders": "/fapi/v1/openOrders"
+    }
+  },
+  "auth_header": "X-MBX-APIKEY",
+  "signature": "HMAC_SHA256",
+  "default_klines_limit": 500,
+  "max_klines_limit": 1500
+}

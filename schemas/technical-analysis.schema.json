@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TechnicalAnalysis",
+  "type": "object",
+  "required": ["pair","exchange","timeframe","timestamp","ta_score","trend","rsi","macd","ema_stack","support","resistance","atr"],
+  "properties": {
+    "pair":          {"type":"string"},
+    "exchange":      {"type":"string", "enum":["binance","okx"]},
+    "timeframe":     {"type":"string", "examples":["15m","1h","4h","1d"]},
+    "timestamp":     {"type":"string", "format":"date-time"},
+    "ta_score":      {"type":"integer", "minimum":0, "maximum":100},
+    "trend":         {"type":"string", "enum":["strong_up","up","sideways","down","strong_down"]},
+    "rsi":           {"type":"number", "minimum":0, "maximum":100},
+    "macd":          {"type":"object", "properties":{"line":{"type":"number"},"signal":{"type":"number"},"hist":{"type":"number"},"crossing":{"type":"string","enum":["bullish","bearish","none"]}}},
+    "ema_stack":     {"type":"object", "properties":{"ema20":{"type":"number"},"ema50":{"type":"number"},"ema200":{"type":"number"},"stack":{"type":"string","enum":["bullish","mixed","bearish"]}}},
+    "bollinger":     {"type":"object", "properties":{"upper":{"type":"number"},"middle":{"type":"number"},"lower":{"type":"number"},"width":{"type":"number"}}},
+    "support":       {"type":"array", "items":{"type":"number"}},
+    "resistance":    {"type":"array", "items":{"type":"number"}},
+    "atr":           {"type":"number"}
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "RiskPlan",
+  "type": "object",
+  "required": ["pair","exchange","market_type","capital","risk_pct","entry","stop","position_size","R_per_unit","go_no_go"],
+  "properties": {
+    "pair":         {"type":"string"},
+    "exchange":     {"type":"string", "enum":["binance","okx"]},
+    "market_type":  {"type":"string", "enum":["spot","usdm","coinm","swap","futures"]},
+    "profile":      {"type":"string", "examples":["balanced","conservative","aggressive","scalping","futures-low-leverage","futures-high-risk"]},
+    "capital":      {"type":"number", "minimum":0},
+    "risk_pct":     {"type":"number", "minimum":0, "maximum":10},
+    "entry":        {"type":"number"},
+    "stop":         {"type":"number"},
+    "leverage":     {"type":"number", "minimum":1, "maximum":125},
+    "position_size":{"type":"number"},
+    "notional":     {"type":"number"},
+    "R_per_unit":   {"type":"number"},
+    "fees_round_trip":{"type":"number"},
+    "fee_share":    {"type":"number"},
+    "liquidation_price": {"type":["number","null"]},
+    "go_no_go":     {"type":"string", "enum":["GO","NO-GO"]},
+    "no_go_reasons":{"type":"array", "items":{"type":"string"}}
+  }
+}

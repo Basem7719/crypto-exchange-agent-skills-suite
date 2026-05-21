@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Watchlist",
+  "type": "object",
+  "properties": {
+    "lists": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-z0-9_-]+$": {
+          "type": "object",
+          "required": ["label","exchange","market_type","pairs"],
+          "properties": {
+            "label":       {"type":"string"},
+            "exchange":    {"type":"string", "enum":["binance","okx"]},
+            "market_type": {"type":"string", "enum":["spot","usdm","coinm","swap","futures"]},
+            "pairs":       {"type":"array", "items":{"type":"string"}},
+            "alerts":      {
+              "type":"array",
+              "items": {
+                "type":"object",
+                "required":["pair","rule"],
+                "properties": {
+                  "pair": {"type":"string"},
+                  "rule": {"type":"string"},
+                  "channel": {"type":"string", "enum":["inline","email","telegram","webhook"]}
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

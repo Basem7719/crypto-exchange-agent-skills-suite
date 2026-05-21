@@ -1,0 +1,53 @@
+{
+  "binance": {
+    "spot": {
+      "rest_base": "https://api.binance.com",
+      "ws_base": "wss://stream.binance.com:9443",
+      "rate_limit_weight_per_minute": 1200,
+      "rate_limit_orders_per_10s": 50
+    },
+    "usdm": {
+      "rest_base": "https://fapi.binance.com",
+      "ws_base": "wss://fstream.binance.com",
+      "rate_limit_weight_per_minute": 2400
+    },
+    "coinm": {
+      "rest_base": "https://dapi.binance.com",
+      "ws_base": "wss://dstream.binance.com"
+    },
+    "fees": {
+      "spot_taker_bps": 10,
+      "spot_maker_bps": 10,
+      "usdm_taker_bps": 4,
+      "usdm_maker_bps": 2
+    },
+    "symbol_format": {
+      "spot": "BASE+QUOTE",
+      "perp": "BASE+QUOTE",
+      "delivery": "BASE+QUOTE_YYMMDD"
+    },
+    "interval_format": "lowercase",
+    "recv_window_ms": 5000
+  },
+  "okx": {
+    "rest_base": "https://www.okx.com",
+    "ws_public":  "wss://ws.okx.com:8443/ws/v5/public",
+    "ws_private": "wss://ws.okx.com:8443/ws/v5/private",
+    "rate_limit_default_per_2s": 20,
+    "rate_limit_trade_per_2s_uid": 60,
+    "rate_limit_rubik_per_2s": 5,
+    "fees": {
+      "spot_taker_bps": 8,
+      "spot_maker_bps": 6,
+      "swap_taker_bps": 5,
+      "swap_maker_bps": 2
+    },
+    "symbol_format": {
+      "spot": "BASE-QUOTE",
+      "swap": "BASE-QUOTE-SWAP",
+      "futures": "BASE-QUOTE-YYMMDD",
+      "options": "BASE-USD-YYMMDD-STRIKE-C|P"
+    },
+    "interval_format": "uppercase_for_hourly_and_above"
+  }
+}

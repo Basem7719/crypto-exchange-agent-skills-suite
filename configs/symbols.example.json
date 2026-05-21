@@ -1,0 +1,11 @@
+{
+  "examples": [
+    {"common":"BTC/USDT", "binance_spot":"BTCUSDT", "binance_usdm":"BTCUSDT", "okx_spot":"BTC-USDT", "okx_swap":"BTC-USDT-SWAP"},
+    {"common":"ETH/USDT", "binance_spot":"ETHUSDT", "binance_usdm":"ETHUSDT", "okx_spot":"ETH-USDT", "okx_swap":"ETH-USDT-SWAP"},
+    {"common":"SOL/USDT", "binance_spot":"SOLUSDT", "binance_usdm":"SOLUSDT", "okx_spot":"SOL-USDT", "okx_swap":"SOL-USDT-SWAP"},
+    {"common":"BNB/USDT", "binance_spot":"BNBUSDT", "binance_usdm":"BNBUSDT", "okx_spot":"BNB-USDT", "okx_swap":"BNB-USDT-SWAP"},
+    {"common":"XRP/USDT", "binance_spot":"XRPUSDT", "binance_usdm":"XRPUSDT", "okx_spot":"XRP-USDT", "okx_swap":"XRP-USDT-SWAP"},
+    {"common":"BILL/USDT", "binance_spot":null, "okx_spot":"BILL-USDT", "note":"OKX only"},
+    {"common":"PLAY/USDT", "binance_spot":"PLAYUSDT", "okx_spot":"PLAY-USDT", "note":"both"}
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "$schema": "../schemas/watchlist.schema.json",
+  "lists": {
+    "majors": {
+      "label": "Majors",
+      "exchange": "binance",
+      "market_type": "spot",
+      "pairs": [
+        "BTC/USDT",
+        "ETH/USDT",
+        "SOL/USDT",
+        "BNB/USDT",
+        "XRP/USDT",
+        "ADA/USDT",
+        "AVAX/USDT",
+        "DOGE/USDT"
+      ],
+      "alerts": [
+        {"pair":"BTC/USDT", "rule":"RSI<30 on 1h"},
+        {"pair":"ETH/USDT", "rule":"cross EMA50 from below on 4h"}
+      ]
+    },
+    "altcoins": {
+      "label": "Altcoins",
+      "exchange": "binance",
+      "market_type": "spot",
+      "pairs": [
+        "LINK/USDT",
+        "DOT/USDT",
+        "MATIC/USDT",
+        "ATOM/USDT",
+        "NEAR/USDT",
+        "FTM/USDT",
+        "APT/USDT"
+      ],
+      "alerts": []
+    },
+    "high-volume-perp": {
+      "label": "High Volume Perp",
+      "exchange": "binance",
+      "market_type": "usdm",
+      "pairs": [
+        "BTC/USDT",
+        "ETH/USDT",
+        "SOL/USDT",
+        "DOGE/USDT",
+        "1000PEPE/USDT"
+      ],
+      "alerts": [
+        {"pair":"BTC/USDT", "rule":"funding>+0.05% on swap"},
+        {"pair":"ETH/USDT", "rule":"OI Δ>+10% in 24h"}
+      ]
+    },
+    "user-custom": {
+      "label": "User Custom",
+      "exchange": "okx",
+      "market_type": "spot",
+      "pairs": [
+        "BILL/USDT",
+        "PLAY/USDT"
+      ],
+      "alerts": []
+    }
+  }
+}

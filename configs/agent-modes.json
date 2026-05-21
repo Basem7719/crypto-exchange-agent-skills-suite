@@ -1,0 +1,37 @@
+{
+  "$schema": "../schemas/agent-modes.schema.json",
+  "modes": {
+    "analysis_only": {
+      "label": "Analysis Only",
+      "description": "Default. No account access, no order submission, no paper ledger writes. Pure read-only research.",
+      "allow_account_access": false,
+      "allow_paper_trading":  false,
+      "allow_live_execution": false,
+      "default_for_new_users": true
+    },
+    "planning": {
+      "label": "Planning",
+      "description": "Read-only account review enabled. Full planning workflows. No execution.",
+      "allow_account_access": true,
+      "allow_paper_trading":  false,
+      "allow_live_execution": false
+    },
+    "paper_trading": {
+      "label": "Paper Trading",
+      "description": "Includes paper ledger writes. Suitable for forward-testing a strategy before live.",
+      "allow_account_access": true,
+      "allow_paper_trading":  true,
+      "allow_live_execution": false
+    },
+    "execution_ready": {
+      "label": "Execution Ready",
+      "description": "Live submission enabled — still requires explicit CONFIRM and 12 pre-flight gates per order.",
+      "allow_account_access": true,
+      "allow_paper_trading":  true,
+      "allow_live_execution": true,
+      "required_confirmations": ["CONFIRM"],
+      "kill_switch_path":      "~/.crypto-skills/KILLSWITCH"
+    }
+  },
+  "default": "analysis_only"
+}

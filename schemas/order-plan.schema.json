@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "OrderPlan",
+  "type": "object",
+  "required": ["pair","exchange","market_type","side","order_type","qty","generated_at"],
+  "properties": {
+    "pair":          {"type":"string"},
+    "exchange":      {"type":"string", "enum":["binance","okx"]},
+    "market_type":   {"type":"string", "enum":["spot","usdm","coinm","swap","futures"]},
+    "side":          {"type":"string", "enum":["buy","sell","long","short"]},
+    "order_type":    {"type":"string", "enum":["market","limit","limit_maker","stop_market","stop_limit","take_profit_market","take_profit_limit","oco","tp_sl","trailing"]},
+    "qty":           {"type":"number", "minimum":0},
+    "notional":      {"type":"number"},
+    "price":         {"type":"number"},
+    "stop_price":    {"type":"number"},
+    "limit_price":   {"type":"number"},
+    "tp_price":      {"type":"number"},
+    "time_in_force": {"type":"string", "enum":["GTC","IOC","FOK","PO"]},
+    "reduce_only":   {"type":"boolean"},
+    "working_type":  {"type":"string", "enum":["MARK_PRICE","CONTRACT_PRICE"]},
+    "position_side": {"type":"string", "enum":["LONG","SHORT","BOTH","net"]},
+    "leverage":      {"type":"integer", "minimum":1, "maximum":125},
+    "client_order_id":{"type":"string"},
+    "generated_at":  {"type":"string", "format":"date-time"},
+    "exchange_request_preview": {"type":"object"}
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AgentModes",
+  "type": "object",
+  "required": ["modes","default"],
+  "properties": {
+    "modes": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-z_]+$": {
+          "type": "object",
+          "required": ["label","allow_account_access","allow_paper_trading","allow_live_execution"],
+          "properties": {
+            "label": {"type": "string"},
+            "description": {"type": "string"},
+            "allow_account_access": {"type": "boolean"},
+            "allow_paper_trading":  {"type": "boolean"},
+            "allow_live_execution": {"type": "boolean"},
+            "required_confirmations":{"type": "array", "items":{"type":"string"}},
+            "kill_switch_path":     {"type": "string"}
+          }
+        }
+      }
+    },
+    "default": {"type": "string"}
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "$schema": "../schemas/risk-plan.schema.json",
+  "profiles": {
+    "conservative": {
+      "label": "Conservative",
+      "description": "Capital preservation first. Small size, wide stops, only A+ setups.",
+      "risk_pct_max":   0.5,
+      "leverage_cap":   3,
+      "daily_loss_cap_pct": 1.5,
+      "tp1_R_floor":    2.0,
+      "min_RR":         2.0,
+      "max_notional_pct_of_equity": 50,
+      "max_concurrent_positions": 2,
+      "fee_share_max":  0.20
+    },
+    "balanced": {
+      "label": "Balanced",
+      "description": "Default profile. Moderate size, normal stops.",
+      "risk_pct_max":   1.0,
+      "leverage_cap":   10,
+      "daily_loss_cap_pct": 3.0,
+      "tp1_R_floor":    1.5,
+      "min_RR":         1.5,
+      "max_notional_pct_of_equity": 80,
+      "max_concurrent_positions": 3,
+      "fee_share_max":  0.25
+    },
+    "aggressive": {
+      "label": "Aggressive",
+      "description": "Larger size, higher leverage, tighter daily cap to compensate.",
+      "risk_pct_max":   2.0,
+      "leverage_cap":   20,
+      "daily_loss_cap_pct": 5.0,
+      "tp1_R_floor":    1.2,
+      "min_RR":         1.2,
+      "max_notional_pct_of_equity": 100,
+      "max_concurrent_positions": 4,
+      "fee_share_max":  0.30
+    },
+    "scalping": {
+      "label": "Scalping",
+      "description": "Many small trades, low R:R, strict cost control.",
+      "risk_pct_max":   0.5,
+      "leverage_cap":   10,
+      "daily_loss_cap_pct": 2.0,
+      "tp1_R_floor":    1.0,
+      "min_RR":         1.0,
+      "max_notional_pct_of_equity": 60,
+      "max_concurrent_positions": 5,
+      "fee_share_max":  0.15
+    },
+    "futures-low-leverage": {
+      "label": "Futures (Low Leverage)",
+      "description": "Futures-specific, leverage cap 5, normal sizing.",
+      "risk_pct_max":   1.0,
+      "leverage_cap":   5,
+      "daily_loss_cap_pct": 3.0,
+      "tp1_R_floor":    1.5,
+      "min_RR":         1.5,
+      "max_notional_pct_of_equity": 80,
+      "max_concurrent_positions": 3,
+      "fee_share_max":  0.25
+    },
+    "futures-high-risk": {
+      "label": "Futures (High Risk)",
+      "description": "Higher leverage; requires strong setup score and explicit override.",
+      "risk_pct_max":   1.5,
+      "leverage_cap":   25,
+      "daily_loss_cap_pct": 4.0,
+      "tp1_R_floor":    1.5,
+      "min_RR":         1.5,
+      "max_notional_pct_of_equity": 100,
+      "max_concurrent_positions": 3,
+      "fee_share_max":  0.30,
+      "requires_override_flag": "allow_high_leverage"
+    }
+  },
+  "default": "balanced"
+}

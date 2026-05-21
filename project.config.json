@@ -1,0 +1,39 @@
+{
+  "project": "crypto-exchange-agent-skills-suite",
+  "version": "1.0.0",
+  "license": "MIT",
+  "exchanges_primary": ["binance", "okx"],
+  "exchanges_future": ["bybit", "htx"],
+  "scope": {
+    "in_scope": [
+      "spot trading on Binance and OKX",
+      "USDS-M / COIN-M futures on Binance",
+      "swap and futures on OKX",
+      "public market data, order book, klines, funding, OI",
+      "technical analysis (EMA, RSI, MACD, BB, ATR)",
+      "risk management and position sizing",
+      "entry/exit planning",
+      "paper trading",
+      "gated live order submission",
+      "research reports and watchlists"
+    ],
+    "out_of_scope": [
+      "Web3 wallets",
+      "decentralized exchanges (DEX)",
+      "DeFi lending and staking protocols",
+      "on-chain analytics beyond what exchanges expose",
+      "tax accounting",
+      "auto-trading bots running unattended"
+    ]
+  },
+  "compatible_runtimes": ["claude-code", "openclaw", "cursor", "hermes"],
+  "installation_paths": {
+    "claude-code": "~/.claude/skills/",
+    "openclaw":    "~/.openclaw/skills/",
+    "cursor":      "~/.cursor/skills/  OR  .cursor/skills/ (project-local)",
+    "hermes":      "~/.hermes/skills/"
+  },
+  "state_directory": "~/.crypto-skills",
+  "default_risk_profile": "balanced",
+  "default_agent_mode": "analysis_only"
+}
